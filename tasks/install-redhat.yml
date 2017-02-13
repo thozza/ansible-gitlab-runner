@@ -4,7 +4,6 @@
   rpm_key:
     state: present
     key: https://packages.gitlab.com/gpg.key
-  when: ansible_os_family == 'RedHat'
 
 - name: Install GitLab Runner dependencies
   yum:
