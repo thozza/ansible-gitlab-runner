@@ -5,14 +5,6 @@
     state: present
     key: https://packages.gitlab.com/gpg.key
 
-- name: Install GitLab Runner dependencies
-  yum:
-    name: '{{ item }}'
-    state: present
-  with_items:
-    - pygpgme
-    - yum-utils
-
 - name: Add GitLab Runner rpm repo
   template:
     src: runner_gitlab-ci-multi-runner.repo.j2
