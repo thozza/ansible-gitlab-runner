@@ -11,6 +11,9 @@ install:
   # Install Test Kitchen
   - gem install test-kitchen kitchen-docker kitchen-ansible
 
+  # install testinfra
+  - pip install testinfra
+
   # Check Test Kitchen version
   - kitchen --version
 
