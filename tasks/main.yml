@@ -2,9 +2,9 @@
 - name: Install GitLab CI Runner
   include: install-runner.yml
 
-- name: Set global options
+- name: Set global options for GitLab CI Runner
   include: global-setup.yml
 
-- name: Register GitLab Runner
+- name: Register GitLab CI Runner
   include: register-runner.yml
   when: gitlab_runner_registration_token != ''
