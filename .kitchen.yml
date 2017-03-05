@@ -17,7 +17,7 @@ platforms:
   - name: fedora
     driver_config:
       provision_command:
-        - dnf -y install python-pip python-paramiko python-crypto
+        - dnf -y install python-pip python-paramiko python-crypto python-dnf
         - pip install testinfra pytest-logging
 
   - name: centos-7
