@@ -14,8 +14,10 @@ install:
   # install testinfra
   - pip install testinfra
 
-  # Check Test Kitchen version
+  # Check versions
   - kitchen --version
+  - ansible --version
+  - testinfra --version
 
 
 script:
