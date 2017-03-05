@@ -1,8 +1,7 @@
-GitLab Runner [![Build Status](https://api.travis-ci.org/riemers/ansible-gitlab-runner.svg?branch=master)](https://travis-ci.org/riemers/ansible-gitlab-runner) [![Ansible Role](https://img.shields.io/badge/role-riemers.gitlab--runner-blue.svg?maxAge=2592000)](https://galaxy.ansible.com/riemers/gitlab-runner/)
+GitLab Runner [![Build Status](https://api.travis-ci.org/thozza/ansible-gitlab-runner.svg?branch=master)](https://travis-ci.org/thozza/ansible-gitlab-runner) [![Ansible Role](https://img.shields.io/ansible/role/3078.svg)](https://galaxy.ansible.com/thozza/gitlab-runner/)
 =============
 
 This role will install the [official GitLab Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner)
-(fork from haroldb) with updates. Needed something simple and working, this did the trick for me. Open for changes though.
 
 Requirements
 ------------
@@ -38,7 +37,7 @@ The default Docker image to use. Required when executor is `docker`.
 The tags assigned to the runner,
 Defaults to an empty list.
 
-See the [config for more options](https://github.com/riemers/ansible-gitlab-runner/blob/master/tasks/register-runner.yml)
+See the [config for more options](https://github.com/thozza/ansible-gitlab-runner/blob/master/tasks/register-runner.yml)
 
 Example Playbook
 ----------------
@@ -63,3 +62,15 @@ gitlab_runner_docker_volumes:
   - "/var/run/docker.sock:/var/run/docker.sock"
   - "/cache"
 ```
+
+License
+-------
+
+MIT
+
+Author Information
+------------------
+
+Original author is [Harold Barker](https://github.com/haroldb/ansible-gitlab-runner). This version is a fork of a fork by [Erik-jan Riemers](https://github.com/riemers/ansible-gitlab-runner).
+
+This version reworks the installation of the runner, to work also on Fedora. Contributions are welcomed.
