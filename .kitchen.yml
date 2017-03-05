@@ -1,0 +1,49 @@
+---
+driver:
+  name: docker
+  use_sudo: false
+
+provisioner:
+  name: ansible_playbook
+  playbook: tests/test.yml
+  ansible_verbose: true
+  hosts: '*'
+  require_pip: true
+  ansible_version: latest
+  ansible_verbose: true
+  require_chef_for_busser: false
+
+platforms:
+  - name: fedora
+    driver_config:
+      provision_command:
+        - dnf -y install python-pip python-paramiko
+        - pip install testinfra pytest-logging
+
+  - name: centos
+    driver_config:
+      provision_command:
+        - yum -y install python-pip python-paramiko
+        - pip install testinfra pytest-logging
+
+  - name: ubuntu
+    driver_config:
+      provision_command:
+        - apt-get -y --force-yes install python-pip python-paramiko
+        - pip install testinfra pytest-logging
+
+  - name: debian
+    driver_config:
+      provision_command:
+        - apt-get -y --force-yes install python-pip python-paramiko
+        - pip install testinfra pytest-logging
+
+suites:
+  - name: default
+
+verifier:
+  name: shell
+  command: testinfra -vvv --color=yes test/integration/$KITCHEN_SUITE
+
+transport:
+  max_ssh_sessions: 6
