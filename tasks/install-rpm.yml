@@ -1,6 +1,13 @@
 ---
+# Load variables based on OS type
+- include_vars: '{{ item }}'
+  with_first_found:
+    - '../vars/os_{{ ansible_distribution }}.yml'
+    - '../vars/os_{{ ansible_os_family }}.yml'
+    - '../vars/os_RedHat.yml'
+  when: gitlab_runner_rpm_os is not defined
 
-- name: RHEL | Install GitLab GPG key
+- name: RPM | Install GitLab GPG key
   rpm_key:
     state: present
     key: https://packages.gitlab.com/gpg.key
@@ -11,7 +18,6 @@
     dest: /etc/yum.repos.d/runner_gitlab-ci-multi-runner.repo
 
 - name: Install GitLab Runner
-  yum:
+  package:
     name: gitlab-ci-multi-runner
     state: latest
-    update_cache: yes

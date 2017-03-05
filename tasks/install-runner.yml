@@ -3,6 +3,6 @@
   include: install-debian.yml
   when: ansible_os_family == 'Debian'
 
-- name: Install GitLab Runner (RedHat)
-  include: install-redhat.yml
+- name: Install GitLab Runner (RPM)
+  include: install-rpm.yml
   when: ansible_os_family == 'RedHat'
