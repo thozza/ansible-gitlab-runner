@@ -17,25 +17,26 @@ platforms:
   - name: fedora
     driver_config:
       provision_command:
-        - dnf -y install python-pip python-paramiko
+        - dnf -y install python-pip python-paramiko pycryptopp
         - pip install testinfra pytest-logging
 
-  - name: centos
+  - name: centos-7
     driver_config:
       provision_command:
-        - yum -y install python-pip python-paramiko
+        - yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+        - yum -y install python-pip python-paramiko python-crypto
         - pip install testinfra pytest-logging
 
   - name: ubuntu
     driver_config:
       provision_command:
-        - apt-get -y --force-yes install python-pip python-paramiko
+        - apt-get -y --force-yes install python-pip python-paramiko python-pycryptopp
         - pip install testinfra pytest-logging
 
   - name: debian
     driver_config:
       provision_command:
-        - apt-get -y --force-yes install python-pip python-paramiko
+        - apt-get -y --force-yes install python-pip python-paramiko python-pycryptopp
         - pip install testinfra pytest-logging
 
 suites:
