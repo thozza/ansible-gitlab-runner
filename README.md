@@ -1,4 +1,4 @@
-GitLab Runner [![Build Status](https://api.travis-ci.org/thozza/ansible-gitlab-runner.svg?branch=master)](https://travis-ci.org/thozza/ansible-gitlab-runner) [![Ansible Role](https://img.shields.io/ansible/role/3078.svg)](https://galaxy.ansible.com/thozza/gitlab-runner/)
+GitLab Runner [![Build Status](https://api.travis-ci.org/thozza/ansible-gitlab-runner.svg?branch=master)](https://travis-ci.org/thozza/ansible-gitlab-runner) [![Ansible Role](https://img.shields.io/badge/role-thozza.gitlab--runner-blue.svg)](https://galaxy.ansible.com/thozza/gitlab-runner/)
 =============
 
 This role will install the [official GitLab Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner)
@@ -47,7 +47,7 @@ Example Playbook
   vars_files:
     - vars/main.yml
   roles:
-    - { role: riemers.gitlab-runner }
+    - { role: thozza.gitlab-runner }
 ```
 
 Inside `vars/main.yml`
