@@ -4,6 +4,10 @@ sudo: required
 language: ruby
 
 install:
+  # Install Ansible
+  - apt-get install -y python-pip
+  - pip install ansible
+
   # Install Test Kitchen
   - gem install test-kitchen kitchen-docker kitchen-ansible
 
