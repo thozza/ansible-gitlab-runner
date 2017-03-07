@@ -1,0 +1,9 @@
+.kitchen/*
+.kitchen.local.yml
+
+*.egg
+*.pyc
+*.pyo
+
+.idea/*
+.cache/*
