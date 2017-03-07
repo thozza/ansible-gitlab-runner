@@ -47,4 +47,4 @@ verifier:
   command: testinfra -vvv --color=yes test/integration/$KITCHEN_SUITE
 
 transport:
-  max_ssh_sessions: 6
+  max_ssh_sessions: 5
