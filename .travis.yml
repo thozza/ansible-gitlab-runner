@@ -34,7 +34,7 @@ script:
   - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
 
   # Test each system using Test Kitchen
-  - kitchen test $OS
+  - kitchen test -l debug $OS
 
 
 notifications:
